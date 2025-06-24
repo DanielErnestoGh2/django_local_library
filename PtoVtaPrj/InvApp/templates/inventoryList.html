@@ -1,0 +1,14 @@
+{% extends 'mainFrm.html' %}
+{% load static %}
+{% block content %}
+    <h1>Inventory List</h1>
+    <a href="{% url 'inventory_create' %}">Add New Item</a>
+    <ul>
+        {% for inventory in inventories %}
+            <li>
+                {{ inventory.item_name }} - {{ inventory.quantity }}
+                <a href="{% url 'inventory_update' inventory.pk %}">Edit</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

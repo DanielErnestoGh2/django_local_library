@@ -1,0 +1,10 @@
+{% extends 'mainFrm.html' %}
+{% load static %}
+{% block content %}
+    <h1>{% if form.instance.pk %}Update{% else %}Create{% endif %} Inventory Item</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}
