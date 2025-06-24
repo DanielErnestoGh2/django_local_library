@@ -1,0 +1,19 @@
+{% extends 'mainFrm.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iLLuminare VENTAS</title>
+</head>
+<body>
+    <p>Pantalla de VENTAS</p>
+    {{ user}}
+    {{perms.VtasApp}}
+    {{ perms.VtasApp.view_venta }}
+
+</body>
+{% endblock %}

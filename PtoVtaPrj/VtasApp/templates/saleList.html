@@ -1,0 +1,23 @@
+{% extends 'mainFrm.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <title>Sale List</title>
+</head>
+<body>
+    <h1>Sale List</h1>
+    <ul>
+        {% for sale in sales %}
+        <li>
+            <strong>Sale on {{ sale.date }}</strong>
+            <ul>
+                {% for item in sale.items.all %}
+                <li>{{ item.quantity }} of {{ item.product.name }} for {{ item.price }}</li>
+                {% endfor %}
+            </ul>
+            <p>Total: {{ sale.total }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+{% endblock %}
